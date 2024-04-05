@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
     t.classList.remove("no-javascript"),
     t.classList.add("js-activo"),
+    t.insertAdjacentHTML("afterbegin", '\n  <a class="gi-ayuda-boton" href="#" title="Ayuda" aria-label="Página de ayuda"><span>?</span></a>\n  <nav class="gi-nav-ppal" aria-label="main menu">\n    <ul class="gi-nav-ppal__controles" aria-labelledby="mainmenulabel">\n      <h2 id="mainmenulabel" hidden="">Menú principal</h2>\n      <li>\n        <a class="gi-nav-ppal__controles-prev" id="anterior" type="prev" href="javascript:void(0)" title="Anterior"><i class="gi-nav-ppal__gi-icono-prev"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M2,55.4l41.1,41.1c2.6,2.6,6.9,2.6,9.5,0c2.6-2.6,2.6-6.9,0-9.5L22.2,56.7h71c3.7,0,6.7-3,6.7-6.7c0-3.7-3-6.7-6.7-6.7h-71L52.6,13c2.6-2.6,2.6-6.9,0-9.5c-2.6-2.6-6.9-2.6-9.5,0L2,44.6c-1.5,1.5-2.1,3.5-1.9,5.4C-0.1,51.9,0.5,53.9,2,55.4z"/></svg></i><span hidden="">Anterior</span></a>\n      </li>\n      <li class="gi-nav-ppal__separador" aria-hidden="true"></li>\n      <li>\n        <a class="gi-nav-ppal__controles-next" id="siguiente" type="next" href="javascript:void(0)" title="Siguiente"><i class="gi-nav-ppal__gi-icono-next"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M98,44.6L56.9,3.5c-2.6-2.6-6.9-2.6-9.5,0c-2.6,2.6-2.6,6.9,0,9.5l30.3,30.3h-71C3,43.3,0,46.3,0,50c0,3.7,3,6.7,6.7,6.7h71L47.4,87c-2.6,2.6-2.6,6.9,0,9.5c2.6,2.6,6.9,2.6,9.5,0L98,55.4c1.5-1.5,2.1-3.5,1.9-5.4C100.1,48.1,99.5,46.1,98,44.6z"/></svg></i><span hidden="">Siguiente</span></a>\n      </li>\n    </ul>\n  </nav>\n'),
     function() {
         const e = t.querySelector("#siguiente")
           , n = t.querySelector("#anterior");
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     fetch(a).then(e=>e.json()).then(e=>i = e).then(function() { // separar por campos los datos
         const e = i.DATOS[0].titulo_curso
           , n = i.DATOS[0].titulo_ud
+          , a = window.location.href.split("").pop().split("/CONTENIDOS")[0]
           , o = window.location.href.split("N-")[0];
         t.insertAdjacentHTML("afterbegin", `\n      <header class="gi-cabecera-ppal">\n        <h1 class="gi-titulo-ppal">${n}</h1>\n      </header>\n    `);
         const s = (new Date).getFullYear();
